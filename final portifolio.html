@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tahir ul Islam | Web Developer</title>
+
+    <meta name="description"
+        content="Portfolio of Tahir ul Islam, a beginner web developer specializing in modern responsive websites.">
+
+    <style>
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d9ff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #111, #222);
+            color: white;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text p:first-child {
+            color: #00d9ff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero-description {
+            color: #ccc;
+            max-width: 600px;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00d9ff;
+            color: #111;
+        }
+
+        .primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 2px solid #00d9ff;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: #00d9ff;
+            color: #111;
+        }
+
+        .hero-image {
+            flex: 0 0 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #00d9ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 90px;
+            background: #222;
+        }
+
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #00a8cc;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .info-box p {
+            margin-bottom: 12px;
+        }
+
+        .info-box strong {
+            color: #111;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background: #111;
+            color: white;
+        }
+
+        .skills .section-title {
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .skill-card h3 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #bbb;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-image {
+            height: 180px;
+            background: #222;
+            color: #00d9ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: #008ca8;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #eee;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: #008ca8;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #00d9ff;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 200px;
+                height: 200px;
+                flex-basis: 200px;
+                font-size: 60px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            nav {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header>
+
+        <nav class="container">
+
+            <div class="logo">
+                Tahir<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="home">
+
+        <div class="container hero">
+
+            <div class="hero-text">
+
+                <p>HELLO, I'M</p>
+
+                <h1>
+                    Tahir ul <span>Islam</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm a beginner web developer passionate about creating
+                    clean, modern and responsive websites using HTML and CSS.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+                T
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About <span>Me</span>
+            </h2>
+
+            <div class="about">
+
+                <div class="about-text">
+
+                    <h3>I'm learning web development.</h3>
+
+                    <p>
+                        I'm currently building my skills in web development
+                        and learning how websites work from the ground up.
+                    </p>
+
+                    <p>
+                        I enjoy creating simple, clean and responsive
+                        websites and improving my coding skills through
+                        practical projects.
+                    </p>
+
+                    <p>
+                        My current focus is HTML and CSS, with JavaScript
+                        as my next major skill.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <p>
+                        <strong>Name:</strong>
+                        Tahir ul Islam
+                    </p>
+
+                    <p>
+                        <strong>Role:</strong>
+                        Beginner Web Developer
+                    </p>
+
+                    <p>
+                        <strong>Skills:</strong>
+                        HTML, CSS
+                    </p>
+
+                    <p>
+                        <strong>Currently Learning:</strong>
+                        JavaScript
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong>
+                        Pakistan
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Skills</span>
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Creating semantic and well-structured
+                        web pages.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Designing responsive layouts,
+                        colors, typography and animations.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Currently learning JavaScript
+                        to add functionality and interaction.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Projects</span>
+            </h2>
+
+            <div class="projects">
+
+
+                <!-- Project 1 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        💻
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>Personal Portfolio</h3>
+
+                        <p>
+                            A responsive personal portfolio
+                            created using HTML and CSS.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Project 2 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        🌐
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>Business Website</h3>
+
+                        <p>
+                            A modern landing page designed
+                            for a small business.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Project 3 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        🚀
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>Coming Soon</h3>
+
+                        <p>
+                            More web development projects
+                            will be added here.
+                        </p>
+
+                        <a href="#" class="project-link">
+                            Coming Soon →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Contact <span>Me</span>
+            </h2>
+
+            <div class="contact-box">
+
+                <p>
+                    Interested in working with me?
+                    Feel free to contact me.
+                </p>
+
+                <div class="contact-info">
+
+                    <a href="mailto:tahirulislam@email.com">
+                        Email
+                    </a>
+
+                    <a href="https://github.com/">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+                <a
+                    href="mailto:tahirulislam303@email.com"
+                    class="btn primary"
+                >
+                    Send Me an Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Tahir ul Islam</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
